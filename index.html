@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Trade Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #3b82f6; /* Blue */
+            border-radius: 3px;
+        }
+
+        /* Hero section background image with full screen height */
+        .hero-background {
+            background-image: url('/pictures/8bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Custom image container for the coffee products section */
+        .coffee-image-container {
+            position: relative;
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+        }
+        @media (min-width: 1024px) {
+            .coffee-image-container {
+                border-radius: 80px;
+                clip-path: ellipse(50% 50% at 50% 50%);
+            }
+        }
+        .since-2017-circle {
+            position: absolute;
+            top: 1rem;
+            right: 0;
+            transform: translateX(50%);
+            background: #fff;
+            border-radius: 9999px; /* rounded-full */
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Custom styles for the numbered circles in the coffee bean section */
+        .numbered-circle {
+            background-color: #3b82f6; /* Tailwind's blue-500 */
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        /* Custom styles for the new values section */
+        .radial-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Adjusted max-width */
+            margin: auto;
+        }
+        .radial-item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* Adjusted positions for a tighter layout */
+        .radial-item-1 { transform: translate(-50%, -50%) translate(-200px, -150px); text-align: left; }
+        .radial-item-2 { transform: translate(-50%, -50%) translate(-250px, 0); text-align: left; }
+        .radial-item-3 { transform: translate(-50%, -50%) translate(-200px, 150px); text-align: left; }
+        .radial-item-4 { transform: translate(-50%, -50%) translate(200px, -150px); text-align: right; }
+        .radial-item-5 { transform: translate(-50%, -50%) translate(250px, 0); text-align: right; }
+        .radial-item-6 { transform: translate(-50%, -50%) translate(200px, 150px); text-align: right; }
+
+        @media (max-width: 1023px) {
+            .radial-item {
+                position: static;
+                transform: none;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .radial-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .radial-item .flex {
+                justify-content: center;
+            }
+        }
+
+        /* Custom styling for the gallery section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 0.5rem;
+            }
+            .gallery-item-1 { grid-column: 1 / span 1; grid-row: 1 / span 1; }
+            .gallery-item-2 { grid-column: 2 / span 1; grid-row: 1 / span 1; }
+            .gallery-item-3 { grid-column: 1 / span 1; grid-row: 2 / span 1; }
+            .gallery-item-4 { grid-column: 2 / span 1; grid-row: 2 / span 1; }
+            .gallery-item-5 { grid-column: 3 / span 1; grid-row: 1 / span 2; }
+        }
+        
+        /* Enhanced hero section */
+        .hero-content {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-content {
+                padding-top: 15rem;
+                padding-bottom: 15rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <!-- Hero Section Container -->
+    <div class="relative w-full hero-background bg-cover bg-center">
+   
+        <!-- Navigation Bar -->
+        <nav class="relative z-10 p-2 md:p-8">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex md:pl-20 items-center text-white font-bold tracking-widest">
+                    
+                    <span class="text-white text-sm ">SUPREME TRADE SOLUTIONS</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4 text-white">
+                    <a href="#" class="px-2 py-1 border-b-2 border-white text-xs ">Home</a>
+                    <a href="#" class="hover:text-blue-400 transition  text-xs">About Us</a>
+                    <div class="relative group">
+                        <a href="#" class="flex items-center hover:text-blue-400 transition  text-xs">
+                            Products
+                           
+                        </a>
+                        <!-- Dropdown Menu -->
+                    </div>
+                    <a href="#" class="hover:text-blue-400 transition text-xs ">Careers</a>
+                    <a href="#" class="hover:text-blue-400 transition text-xs ">Gallery</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-end p-2">
+                <button id="close-mobile-menu-btn" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full text-white text-base space-y-4">
+                <a href="#" class="hover:text-blue-400 transition">Home</a>
+                <a href="#" class="hover:text-blue-400 transition">About Us</a>
+                <a href="#" class="hover:text-blue-400 transition">Products</a>
+                <a href="#" class="hover:text-blue-400 transition">Careers</a>
+                <a href="#" class="hover:text-blue-400 transition">Gallery</a>
+            </div>
+        </div>
+
+        <div class="relative z-10 hero-content">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-left text-white max-w-2xl">
+                    <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-bold mb-4 tracking-wide leading-tight">
+                        Your Global Export & <br> Import Partner
+                    </h1>
+                    <p class="text-sm sm:text-base text-gray-200 mb-6 max-w-lg">
+                        Ensuring your products reach global markets swiftly and securely. Partner with us for seamless international trade solutions tailored to your business needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-3">
+                        <!-- Button with a white border and full rounded corners -->
+                        <button class="text-gray-200 px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-gray-100 hover:text-gray-900 transition border-2 border-white">
+                            Read More
+                        </button>
+                        <!-- Button with blue background and full rounded corners -->
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-blue-700 transition">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+  
+    <section class="bg-white pt-40 pb-40 px-60 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
+            <!-- Left Side: Text Content -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <h3 class="text-gray-500 font-semibold mb-2 text-sm">CV Putra Karo Mandiri</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+                    Roasted Bean & <br> Green Bean
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base mb-6 max-w-lg">
+                    CV Putra Karo Mandiri is a coffee producer in Medan, Indonesia, offering premium Arabica and Robusta beans. We source the finest coffee from trusted farmers to meet the needs of local and international markets.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3">
+                    <!-- Read More Button -->
+                    <button class="flex items-center justify-center space-x-2 bg-stone-700 text-white px-5 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-stone-800 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        <span>READ MORE</span>
+                    </button>
+                    <!-- Shop Now Button -->
+                    <button class="flex items-center justify-center space-x-2 bg-teal-400 text-white px-5 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-teal-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        <span>SHOP NOW</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Image and "since 2017" bubble -->
+            <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
+                <div class="coffee-image-container max-w-md">
+                    <img src="https://placehold.co/800x600/f1f5f9/64748b?text=Coffee+Beans" alt="Woman harvesting coffee beans" class="w-full h-auto rounded-xl object-cover transform scale-105">
+                </div>
+              
+                <div class="since-2017-circle hidden md:flex flex-col text-gray-800">
+                    <span class=" ">since</span>
+                    <span class="text-xl font-extrabold mt-0.8">2017</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New Section: Coffee Beans and Building Quality -->
+    <section class="bg-gray-200 pt-20 pb-40 px-4 sm:px-6  lg:px-12">
+        <div class="container mx-auto">
+            <h2 class="text-center text-gray-800 text-2xl sm:text-3xl font-semibold mb-8 max-w-2xl mx-auto">
+                Discover the rich flavors of Indonesia with CV Putra Karo Mandiri's premium Arabica and Robusta coffee beans.
+            </h2>
+            
+            <!-- Coffee Beans Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Bean 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">01</div>
+                    <img src="https://placehold.co/150x150/94b49f/ffffff?text=Green+Arabica" alt="Green Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Green Bean Arabica</h4>
+                    <p class="text-gray-600   sm:text-sm">Premium unroasted Arabica coffee beans.</p>
+                </div>
+                <!-- Bean 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">02</div>
+                    <img src="https://placehold.co/150x150/b8b688/ffffff?text=Green+Robusta" alt="Green Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Green Bean Robusta</h4>
+                    <p class="text-gray-600   sm:text-sm">High-quality unroasted Robusta beans.</p>
+                </div>
+                <!-- Bean 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">03</div>
+                    <img src="https://placehold.co/150x150/946b5a/ffffff?text=Roasted+Arabica" alt="Roasted Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean Arabica</h4>
+                    <p class="text-gray-600   sm:text-sm">Expertly roasted Arabica beans.</p>
+                </div>
+                <!-- Bean 4 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">04</div>
+                    <img src="https://placehold.co/150x150/4c3f3f/ffffff?text=Roasted+Robusta" alt="Roasted Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean Robusta</h4>
+                    <p class="text-gray-600   sm:text-sm">Robustly roasted Robusta beans.</p>
+                </div>
+                <!-- Bean 5 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">05</div>
+                    <img src="https://placehold.co/150x150/4c3f3f/ffffff?text=Roasted+House+Blend" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean House Blend</h4>
+                    <p class="text-gray-600   sm:text-sm">A harmonious blend of Arabica and Robusta.</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">05</div>
+                    <img src="https://placehold.co/150x150/4c3f3f/ffffff?text=Roasted+House+Blend" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean House Blend</h4>
+                    <p class="text-gray-600   sm:text-sm">A harmonious blend of Arabica and Robusta.</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">05</div>
+                    <img src="https://placehold.co/150x150/4c3f3f/ffffff?text=Roasted+House+Blend" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean House Blend</h4>
+                    <p class="text-gray-600   sm:text-sm">A harmonious blend of Arabica and Robusta.</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <div class="numbered-circle">05</div>
+                    <img src="https://placehold.co/150x150/4c3f3f/ffffff?text=Roasted+House+Blend" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <h4 class="font-bold text-gray-800 text-sm sm:text-base mb-1">Roasted Bean House Blend</h4>
+                    <p class="text-gray-600   sm:text-sm">A harmonious blend of Arabica and Robusta.</p>
+                </div>
+                
+            </div>
+<!--             
+        
+            <div class="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0 lg:space-x-8">
+            
+                <div class="w-full lg:w-1/3">
+                    <img src="https://placehold.co/500x300/96614a/ffffff?text=Coffee+Beans" alt="Coffee beans on wooden spoons" class="w-full h-auto rounded-lg shadow-md object-cover">
+                </div>
+              
+                <div class="w-full lg:w-1/3 text-center py-4 lg:py-0">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Building Quality</h2>
+                    <button class="flex items-center justify-center space-x-2 bg-stone-700 text-white px-6 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-stone-800 transition mx-auto">
+                        <span>SHOP NOW</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                </div>
+               
+                <div class="w-full lg:w-1/3">
+                    <img src="https://placehold.co/500x300/96614a/ffffff?text=Pouring+Coffee" alt="Person pouring coffee into a cup" class="w-full h-auto rounded-lg shadow-md object-cover">
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- New Section: Core Values -->
+    <section class="bg-white pt-20 pb-40 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto">
+            <div class="radial-container">
+                <!-- Central Image -->
+                <div class="w-full flex justify-center items-center lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-64 lg:h-64">
+                    <img src="/pictures/8bg.jpg" alt="A cup of coffee" class="w-3/4 lg:w-full h-auto object-cover rounded-full shadow-lg mb-8 lg:mb-0">
+                </div>
+                
+                <!-- Radial Items -->
+                <div class="lg:w-full lg:h-full lg:relative grid lg:grid-cols-3 lg:grid-rows-3 lg:gap-0 flex flex-col items-center">
+                    <!-- Item 1 (Top-Left) -->
+                    <div class="lg:row-start-1 lg:col-start-1 text-center lg:text-left">
+                        <div class="flex items-center lg:justify-start space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2l4-4m5.618 7.618c1.55 1.55 1.55 4.072 0 5.622c-1.55 1.55-4.072 1.55-5.622 0l-4-4c-1.55-1.55-1.55-4.072 0-5.622l4-4c1.55-1.55 4.072-1.55 5.622 0z"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Premium Quality</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px]">
+                            We provide carefully selected Arabica and Robusta beans to ensure top-notch flavor.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 (Middle-Left) -->
+                    <div class="lg:row-start-2 lg:col-start-1 text-center lg:text-left">
+                        <div class="flex items-center lg:justify-start space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Trusted Sourcing</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px]">
+                            Our coffee beans are sourced from Indonesia's finest coffee-growing regions.
+                        </p>
+                    </div>
+
+                    <!-- Item 3 (Bottom-Left) -->
+                    <div class="lg:row-start-3 lg:col-start-1 text-center lg:text-left">
+                        <div class="flex items-center lg:justify-start space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 14v5a3 3 0 003 3h10a3 3 0 003-3v-5m-9-9v11m0 0l4-4m-4 4l-4-4"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Strong Farmer Partnerships</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px]">
+                            We maintain close relationships with local farmers for sustainable practices.
+                        </p>
+                    </div>
+
+                    <!-- Item 4 (Top-Right) -->
+                    <div class="lg:row-start-1 lg:col-start-3 text-center lg:text-right">
+                        <div class="flex items-center lg:justify-end space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Versatile Product Range</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px] ml-auto">
+                            We provide a variety of Arabica and Robusta beans to suit every preference.
+                        </p>
+                    </div>
+
+                    <!-- Item 5 (Middle-Right) -->
+                    <div class="lg:row-start-2 lg:col-start-3 text-center lg:text-right">
+                        <div class="flex items-center lg:justify-end space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.104 0-2 .896-2 2s.896 2 2 2s2-.896 2-2s-.896-2-2-2zm0 12c-2.76 0-5-2.24-5-5c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.76-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Competitive Pricing</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px] ml-auto">
+                            High-quality products at prices designed to suit both local and international markets.
+                        </p>
+                    </div>
+
+                    <!-- Item 6 (Bottom-Right) -->
+                    <div class="lg:row-start-3 lg:col-start-3 text-center lg:text-right">
+                        <div class="flex items-center lg:justify-end space-x-2 mb-2">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Commitment to Excellence</h4>
+                        </div>
+                        <p class="text-gray-600   sm:text-sm max-w-[180px] ml-auto">
+                            Every step is crafted with care to deliver the perfect coffee experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Our Gallery -->
+    <section class="bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-8">Our Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 (Text Box) -->
+                <div class="gallery-item-1 bg-teal-500 p-6 rounded-lg shadow-md flex flex-col justify-center items-start text-white">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-2">Our Gallery</h3>
+                    <p class="text-sm sm:text-base mb-4">
+                        Discover our journey through images—sourcing premium beans, crafting perfect roasts, and celebrating the art of Indonesian coffee.
+                    </p>
+                    <a href="#" class="flex items-center space-x-2 text-white font-semibold text-sm sm:text-base">
+                        <span>VIEW MORE</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item-2 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Coffee+Production" alt="Coffee beans being sorted" class="w-full h-full object-cover">
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item-3 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Drying+Beans" alt="Coffee beans drying on the ground" class="w-full h-full object-cover">
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item-4 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Sacks+of+Coffee" alt="Sacks of coffee beans in a warehouse" class="w-full h-full object-cover">
+                </div>
+                <!-- Gallery Item 5 (Large Image) -->
+                <div class="gallery-item-5 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/800x600/e2e8f0/64748b?text=Export+Shipment" alt="Workers with an export shipment" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Latest Blog -->
+    <section class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-blue-500 font-semibold mb-2 text-sm sm:text-base">Blog</h3>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">Latest Blog</h2>
+            
+            <!-- Blog Cards Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center text-left">
+                    <img src="https://placehold.co/600x400/94b49f/ffffff?text=Coffee+Berries" alt="Coffee Berries on a branch" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-gray-500   sm:text-sm">Augustus 25, 2024</span>
+                        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mt-2 mb-3">Why Choose Premium Coffee Beans from Indonesia?</h4>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition font-semibold text-sm sm:text-base">
+                            Read More &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center text-left">
+                    <img src="https://placehold.co/600x400/b8b688/ffffff?text=Hands+holding+coffee+beans" alt="Hands holding coffee beans" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-gray-500   sm:text-sm">Augustus 25, 2024</span>
+                        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mt-2 mb-3">Arabica vs. Robusta: Which Coffee Bean is Right for You?</h4>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition font-semibold text-sm sm:text-base">
+                            Read More &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center text-left">
+                    <img src="https://placehold.co/600x400/946b5a/ffffff?text=Pour+Over+Coffee" alt="Pour over coffee brewing" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-gray-500   sm:text-sm">Augustus 25, 2024</span>
+                        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mt-2 mb-3">The Journey of Coffee, From Bean to Brew</h4>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition font-semibold text-sm sm:text-base">
+                            Read More &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Call to Action -->
+    <section class="bg-teal-500 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between text-white text-center lg:text-left">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 lg:mb-0 max-w-2xl">
+                We deliver the perfect coffee experience for every coffee enthusiast.
+            </h2>
+            <button class="bg-white text-gray-800 px-6 py-3 rounded-md font-semibold shadow-md text-sm sm:text-base hover:bg-gray-100 transition flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-11a1 1 0 01-1-1v-12z" />
+                </svg>
+                <span>CALL US NOW</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-6 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-sm sm:text-base">
+            <p class="text-sm sm:text-base">&copy; 2024 Supreme Trade Solutions. All rights reserved.</p>
+            <div class="flex space-x-4 sm:space-x-6">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+    </script>
+
+</body>
+</html>
