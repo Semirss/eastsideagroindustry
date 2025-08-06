@@ -10,8 +10,10 @@
 </head>
 <body class="bg-white">
 
-    <div class="relative w-full hero-background bg-cover bg-center">
-   
+  <div class="relative w-full hero-background bg-cover bg-center">
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+        
         <!-- Navigation Bar -->
         <nav class="relative z-10 p-2 md:pt-8 md:pr-16">
             <div class="container mx-auto flex justify-between items-center">
@@ -22,21 +24,22 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-4 text-white">
-                    <a href="#" class="px-2 py-1 text-xs hover:text-blue-400 ">Home</a>
-                    <a href="#" class="hover:text-blue-400 transition  text-xs">About Us</a>
+                    <a href="#" class="px-2 py-1 text-xs hover:underline hover:">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition text-xs">About</a>
                     <div class="relative group">
-                        <a href="#" class="flex items-center hover:text-blue-400 transition  text-xs">
+                        <a href="#products" class="flex items-center hover:text-blue-400 transition text-xs">
                             Products
                         </a>
                     </div>
-                    <a href="#" class="hover:text-blue-400 transition text-xs ">Careers</a>
-                    <a href="#" class="hover:text-blue-400 transition text-xs ">Gallery</a>
+                    
+                    <a href="#gallery" class="hover:text-blue-400 transition text-xs ">Gallery</a>
+                    <a href="#contact" class="hover:text-blue-400 transition text-xs ">Contact us </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-white focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
@@ -44,41 +47,41 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-            <div class="flex justify-end p-2">
-                <button id="close-mobile-menu-btn" class="text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <!-- Mobile Menu (Hidden by default, slides from right) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-30 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-end p-4">
+                <button id="close-mobile-menu-btn" class="text-white focus:outline-none p-2 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <div class="flex flex-col items-center justify-start p-12 h-full text-white text-base space-y-8">
-                <a href="#" class="hover:text-blue-400 transition ">Home</a>
-                <a href="#" class="hover:text-blue-400 transition">About Us</a>
-                <a href="#" class="hover:text-blue-400 transition">Products</a>
-                <a href="#" class="hover:text-blue-400 transition">Careers</a>
-                <a href="#" class="hover:text-blue-400 transition">Gallery</a>
+            <div class="flex flex-col items-center justify-center p-12 h-full text-white text-lg space-y-8">
+                <a href="#" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">About</a>
+                <a href="#products" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Products</a>
+                <a href="#gallery" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Gallery</a>
+                <a href="#contact" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Contact us</a>
             </div>
         </div>
 
-        <div class="relative z-10 hero-content">
-            <div class="container  md:pl-12">
+        <div class="relative z-10 hero-content flex items-center justify-start min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-120px)] pb-16">
+            <div class="container mx-auto px-4 md:pl-12">
                 <div class="text-left text-white max-w-2xl">
-                    <h1 class="text-2xl text-center md:text-left sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-wide leading-tight">
+                    <h1 class="text-3xl text-center md:text-left sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-wide leading-tight">
                         EastSide Agro Industry
-                          <br>We Deal We Deliver               
-                            </h1>
-                    <p class="text-sm sm:text-sm text-gray-200 mb-6 max-w-lg">
+                        <br><span class="text-3xl" style="color: #f0cb93;"> We Deal We Deliver</span>
+                    </h1>
+                    <p class="text-sm text-center md:text-start sm:text-sm text-gray-200 mb-6 max-w-lg">
                         Ensuring your products reach global markets swiftly and securely. Partner with us for seamless international trade solutions tailored to your business needs.
                     </p>
-                    <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-3">
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-3">
                         <!-- Button with a white border and full rounded corners -->
                         <button class="text-gray-200 px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-gray-100 hover:text-gray-900 transition border-2 border-white">
                             Read More
                         </button>
                         <!-- Button with blue background and full rounded corners -->
-                        <button class="bg-blue-600 text-white px-6  py-2 rounded-full text-sm font-semibold shadow-md hover:bg-blue-700 transition">
+                        <button class="cbutton text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-gray-100 hover:text-gray-900 transition">
                             Contact Us
                         </button>
                     </div>
@@ -86,126 +89,131 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            });
+
+            // Close mobile menu
+            closeMobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        });
+    </script>
     
-    <!-- Coffee Products Section -->
-   <section class="bg-white md:pt-40 pt-16 pb-12 md:pb-20 px-4 sm:px-6 lg:px-28">
-    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
-        <!-- Left Side: Text Content -->
-        <div class="w-full lg:w-1/2 text-center lg:text-left">
-            <h3 class="text-gray-500 font-semibold mb-2 text-sm">CV Putra Karo Mandiri</h3>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
-                Roasted Bean & <br> Green Bean
-            </h2>
-            <p class="text-gray-600 text-sm sm:text-base mb-6 max-w-lg">
-                CV Putra Karo Mandiri is a coffee producer in Medan, Indonesia, offering premium Arabica and Robusta beans. We source the finest coffee from trusted farmers to meet the needs of local and international markets.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3">
-                <!-- Read More Button -->
-                <button id="readMoreBtn" class="flex items-center justify-center space-x-2 bg-teal-700 text-white px-5 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-stone-800 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                    <span>READ MORE</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Right Side: Image and "since 2017" bubble -->
-        <svg width="0" height="0">
-            <clipPath id="custom-shape" clipPathUnits="objectBoundingBox">
-                <path d="M 0.15,  0.4    C 0.1,-0.01 0.7,-0.01 0.83,0.05 C 1.05,0.2 0.85,0.99 0.91,0.7 C   0.88   ,1.05 0.3,      0.771   0.5 ,0.85 C -0.1,0.7 -0.06,0.3 0.15,0.2 z"></path>
-            </clipPath>
-        </svg>
-
-        <div class="relative w-80 h-80 sm:w-96 sm:h-96">
-            <!-- 'Since 2017' Badge -->
-            <div class="absolute top-2 left-8 z-10 w-28 h-28 rounded-full border-2 border-dashed border-teal-500 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center shadow-lg">
-                <span class="text-sm font-semibold text-gray-700">since</span>
-                <span class="text-3xl font-bold text-gray-800">2017</span>
-            </div>
-
-            <!-- Clipped Image -->
-            <img 
-                src="/pictures/Ethiopian-Guji-Rejion.jpeg" 
-                alt="Woman harvesting coffee beans" 
-                class="w-full h-full object-cover clip-curved"
-                style="clip-path: url(#custom-shape);"
-                onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/4a5568?text=Image+Not+Found';"
-            >
-        </div>
-    </div>
-
-    <!-- Expanded Content (Hidden by default) -->
-    <div id="expandedContent" class="hidden container mx-auto mt-20 lg:mt-28">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Expanded Image -->
-            <div class="order-2 lg:order-1">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         alt="Coffee Production" 
-                         class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+        <!-- Coffee Products Section -->
+    <section id="about" class="bg-white md:pt-40 pt-16 pb-12 md:pb-20 px-4 sm:px-6 lg:px-28">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
+            <!-- Left Side: Text Content -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <h3 class="text-gray-500 font-semibold mb-2 text-sm">CV Putra Karo Mandiri</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+                    Roasted Bean & <br> Green Bean
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base mb-6 max-w-lg">
+                    CV Putra Karo Mandiri is a coffee producer in Medan, Indonesia, offering premium Arabica and Robusta beans. We source the finest coffee from trusted farmers to meet the needs of local and international markets.
+                </p>
+                <!-- Expanded Text Content -->
+                <div id="expandedTextContent" class="text-gray-700 text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    <p class="mb-4">
+                        At CV Putra Karo Mandiri, our passion for coffee runs deep. We are dedicated to cultivating and sourcing the highest quality Arabica and Robusta beans from the rich volcanic soils of Indonesia. Our journey begins with meticulous selection, working closely with local farmers who share our commitment to sustainable and ethical practices. This direct trade approach ensures fair compensation for their hard work and fosters a thriving coffee community.
+                    </p>
+                    <p class="mb-4">
+                        Once harvested, our beans undergo a rigorous quality control process, from initial sorting to expert cupping sessions. We pride ourselves on our precise roasting techniques, which are carefully calibrated to bring out the unique flavor profiles inherent in each bean. Whether it's the bright acidity of our Arabica or the robust body of our Robusta, every batch is crafted to perfection, ready to delight coffee enthusiasts around the world.
+                    </p>
+                    <p>
+                        Our commitment extends beyond quality to global reach. We employ streamlined logistics to ensure our premium Indonesian coffee reaches international markets efficiently and fresh. From our farms to your cup, CV Putra Karo Mandiri represents a blend of tradition, innovation, and unwavering dedication to the art of coffee.
+                    </p>
+                    <!-- SHOW LESS Button - now styled like READ MORE -->
+                    <button id="closeBtn" class="flex items-center justify-center space-x-2 bg-teal-700 text-white px-5 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-stone-800 transition mt-8 mx-auto lg:mx-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        <span>SHOW LESS</span>
+                    </button>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
+                    <!-- Read More Button -->
+                    <button id="readMoreBtn" class="flex items-center justify-center space-x-2 bg-teal-700 text-white px-5 py-2.5 rounded-md text-sm font-semibold shadow-md hover:bg-stone-800 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        <span>READ MORE</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Expanded Text -->
-            <div class="order-1 lg:order-2">
-                <h3 class="text-teal-700 font-semibold mb-4 text-sm tracking-wider">OUR COMMITMENT TO QUALITY</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                        <div class="text-teal-700 mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-gray-800 mb-2">Direct Trade</h4>
-                        <p class="text-gray-600 text-sm">We establish long-term relationships with farmers, ensuring fair prices and sustainable practices.</p>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                        <div class="text-teal-700 mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-gray-800 mb-2">Quality Control</h4>
-                        <p class="text-gray-600 text-sm">Every batch undergoes rigorous testing to meet international quality standards.</p>
-                    </div>
+            <!-- Right Side: Image and "since 2017" bubble -->
+            <svg width="0" height="0">
+                <clipPath id="custom-shape" clipPathUnits="objectBoundingBox">
+                    <path d="M 0.15, 0.4 C 0.1,-0.01 0.7,-0.01 0.83,0.05 C 1.05,0.2 0.85,0.99 0.91,0.7 C 0.88 ,1.05 0.3, 0.771 0.5 ,0.85 C -0.1,0.7 -0.06,0.3 0.15,0.2 z"></path>
+                </clipPath>
+            </svg>
+
+            <div class="relative w-80 h-80 sm:w-96 sm:h-96">
+                <!-- 'Since 2017' Badge -->
+                <div class="absolute top-2 left-8 z-10 w-28 h-28 rounded-full border-2 border-dashed border-teal-500 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center shadow-lg">
+                    <span class="text-sm font-semibold text-gray-700">since</span>
+                    <span class="text-3xl font-bold text-gray-800">2017</span>
                 </div>
-                
-                <button id="closeBtn" class="text-teal-700 font-semibold text-sm flex items-center hover:text-teal-800 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    SHOW LESS
-                </button>
+
+                <!-- Clipped Image -->
+                <img
+                    src="/pictures/Ethiopian-Guji-Rejion.jpeg"
+                    alt="Woman harvesting coffee beans"
+                    class="w-full h-full object-cover clip-curved"
+                    style="clip-path: url(#custom-shape);"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/4a5568?text=Image+Not+Found';"
+                >
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    document.getElementById('readMoreBtn').addEventListener('click', function() {
-        const expandedContent = document.getElementById('expandedContent');
-        expandedContent.classList.remove('hidden');
-        expandedContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
+    <script>
+        // JavaScript for the "Coffee Products Section" text expansion
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const expandedTextContent = document.getElementById('expandedTextContent');
 
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('expandedContent').classList.add('hidden');
-        document.getElementById('readMoreBtn').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-</script>
+        // Initially hide the expanded content and show the "Read More" button
+        expandedTextContent.classList.remove('show-text'); // Ensure it's hidden on load
+        readMoreBtn.classList.remove('hidden'); // Ensure Read More is visible
+        closeBtn.classList.add('hidden'); // Ensure Show Less is hidden
 
-<style>
-    .clip-curved {
-        clip-path: url(#custom-shape);
-    }
-</style>
+        readMoreBtn.addEventListener('click', function() {
+            expandedTextContent.classList.add('show-text');
+            readMoreBtn.classList.add('hidden'); // Hide read more button
+            closeBtn.classList.remove('hidden'); // Show show less button
+            expandedTextContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            expandedTextContent.classList.remove('show-text');
+            readMoreBtn.classList.remove('hidden'); // Show read more button
+            closeBtn.classList.add('hidden'); // Hide show less button
+            readMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
     
     <!-- Coffee Beans Section -->
-    <section class="bg-gray-100 pt-20 pb-10 px-4 sm:px-6 lg:px-40">
+    <section id="products" class="bg-gray-100 pt-20 pb-10 px-4 sm:px-6 lg:px-40">
         <div class="container mx-auto">
             <h1 class="text-center  text-bold md:pb-4 text-gray-800 text-5xl sm:text-4xl mb-8 max-w-4xl mx-auto">
                 Our Products            </h1>
@@ -215,53 +223,53 @@
                 <!-- Bean 1 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">01</div>
-                    <img src="/pictures/8bg.jpg" alt="Green Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Green Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Green Bean Arabica</h4>
                     <p class="text-gray-600 sm:text-xs">Premium unroasted Arabica coffee beans.</p>
                 </div>
                 <!-- Bean 2 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">02</div>
-                    <img src="/pictures/8bg.jpg" alt="Green Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Green Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Green Bean Robusta</h4>
                     <p class="text-gray-600 sm:text-xs">High-quality unroasted Robusta beans.</p>
                 </div>
                 <!-- Bean 3 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">03</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted Arabica Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean Arabica</h4>
                     <p class="text-gray-600 sm:text-xs">Expertly roasted Arabica beans.</p>
                 </div>
                 <!-- Bean 4 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">04</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted Robusta Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean Robusta</h4>
                     <p class="text-gray-600 sm:text-xs">Robustly roasted Robusta beans.</p>
                 </div>
                 <!-- Bean 5 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">05</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean House Blend</h4>
                     <p class="text-gray-600 sm:text-xs">A harmonious blend of Arabica and Robusta.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">06</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean House Blend</h4>
                     <p class="text-gray-600 sm:text-xs">A harmonious blend of Arabica and Robusta.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">07</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean House Blend</h4>
                     <p class="text-gray-600 sm:text-xs">A harmonious blend of Arabica and Robusta.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="numbered-circle">08</div>
-                    <img src="/pictures/8bg.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
+                    <img src="/pictures/beans1.jpg" alt="Roasted House Blend" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
                     <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Roasted Bean House Blend</h4>
                     <p class="text-gray-600 sm:text-xs">A harmonious blend of Arabica and Robusta.</p>
                 </div>
@@ -366,11 +374,11 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="bg-gray-100 pt-12 pb-4 md:pt-20 md:pb-32 lg:px-8 sm:px-6 rounded-lg shadow-inner">
+    <section id="gallery" class="bg-gray-100 pt-12 pb-4 md:pt-20 md:pb-32 lg:px-8 sm:px-6 rounded-lg shadow-inner">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                 <!-- Navigation Menu -->
-                <nav class="mb-4 md:mb-0">
+                <nav class="mb-4  p-4  md:p-2  md:mb-0">
                     <ul class="flex space-x-4">
                         <li><a href="#" class="nav-link active text-gray-700 hover:text-teal-500 transition-colors duration-300" data-category="All">All</a></li>
                         <li><a href="#" class="nav-link text-gray-700 hover:text-teal-500 transition-colors duration-300" data-category="Farm">Farm</a></li>
@@ -384,7 +392,7 @@
                 <h2 id="galleryTitle" class="text-4xl sm:text-4xl font-bold text-gray-800 text-center md:text-right">Our Gallery</h2>
             </div>
 
-            <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-grid p-4" id="galleryGrid">
                 <!-- Gallery images will be dynamically loaded here by JavaScript -->
             </div>
         </div>
@@ -436,7 +444,6 @@
                  { src: "/gallery/event1.jpg", title: "Barista Crafting Coffee", description: "The final touch: a perfect cup." },
                 { src: "/gallery/team3.jpg", title: "Coffee Bean Sorting Machine", description: "Advanced technology for purity." },
                 { src: "/gallery/products4.jpg", title: "Coffee Bean Sorting Machine", description: "Advanced technology for purity." },
-
             ],
             "Farm": [
                 { src: "/gallery/farm1.jpg", title: "Freshly Picked Beans", description: "Harvesting the finest coffee beans." },
@@ -498,7 +505,7 @@
                 imageContainer.className = 'image-container bg-gray-300 shadow-md rounded-lg fade-in-initial';
 
                 imageContainer.innerHTML = `
-                    <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover">
+                    <img src="${item.src}" alt="${item.title}" class="w-full h-full  object-cover">
                     <div class="image-overlay">
                         <h3 class="text-xl">${item.title}</h3>
                         <p class="text-sm">${item.description}</p>
@@ -626,18 +633,19 @@
         </div>
     </section>  -->
 
+  
     <!-- Call to Action Section -->
-    <section class="bg-teal-500 py-12 px-4 sm:px-6 lg:px-8">
+    <section id="contact" class=" py-16 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between text-white text-center lg:text-left">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 lg:mb-0 max-w-2xl">
                 We deliver the perfect coffee experience for every coffee enthusiast.
             </h2>
-            <button class="bg-white text-gray-800 px-6 py-3 rounded-md font-semibold shadow-md text-sm sm:text-base hover:bg-gray-100 transition flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <a href="tel:+1234567890" class="cta-button text-white px-8 py-4 rounded-full font-semibold shadow-lg text-base sm:text-lg flex items-center space-x-3 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-11a1 1 0 01-1-1v-12z" />
                 </svg>
                 <span>CALL US NOW</span>
-            </button>
+            </a>
         </div>
     </section>
 

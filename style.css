@@ -19,7 +19,7 @@
 
         /* Hero section background image with full screen height */
         .hero-background {
-            background-image: url('pictures/Ethiopian-Guji-Rejion.jpeg');
+            background-image: url('pictures/8bg.jpg');
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -61,7 +61,7 @@
 
         /* Custom styles for the numbered circles in the coffee bean section */
         .numbered-circle {
-            background-color: #033a92; /* Tailwind's blue-500 */
+            background-color: #a06000; /* Tailwind's blue-500 */
             color: white;
             width: 28px;
             transform: translateX(-150%);
@@ -108,8 +108,8 @@
         }
         @media (min-width: 300px) {
             .hero-content {
-                padding-top: 10rem;
-                padding-bottom: 10rem;
+                padding-top: 8rem;
+                padding-bottom: 16rem;
                 padding-left: 4px;
                 
             }
@@ -206,11 +206,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background: #EFF6FF;
-            color: #3B82F6;
+            background: hsl(114, 65%, 91%);
+            color: #058f10;
             flex-shrink: 0;
             margin-right: 0.75rem;
         }
@@ -389,4 +389,40 @@
             opacity: 0;
             transform: scale(0.8) translateY(-30px); /* Start smaller and higher */
         }
-    
+    .contact{
+        background-color: #a06000;
+    }
+    .cbutton{
+        background-color: #06be43;
+    }
+    /* Custom clip-path for the curved image */
+        .clip-curved {
+            clip-path: url(#custom-shape);
+        }
+
+        /* CSS for the text expansion */
+        #expandedTextContent {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+
+        #expandedTextContent.show-text {
+            max-height: 1000px; /* Increased to ensure all content is visible */
+            opacity: 1;
+        }
+            /* Custom styling for the call to action button */
+        .cta-button {
+            background: #ce7d04;
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background:#339c09;
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+        #contact {
+            background: #047031; /* Light gray background */
+        
+        }
