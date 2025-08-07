@@ -10,28 +10,30 @@
 </head>
 <body class="bg-white">
 
-  <div class="relative w-full hero-background bg-cover bg-center">
+  
+    <div class="relative w-full hero-background bg-cover bg-center">
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
         
         <!-- Navigation Bar -->
-        <nav class="relative z-10 p-2 md:pt-8 md:pr-16">
+        <!-- The nav now has a subtle dark overlay instead of a solid color -->
+        <nav class="fixed top-0 left-0 right-0 z-50 p-2 md:pt-4 md:pr-16 bg-black bg-opacity-30 transition-all duration-300">
             <div class="container mx-auto flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex md:pl-20 items-center text-white font-bold tracking-widest">
-                    <span class="text-white text-sm ">EastSide Agro Industry</span>
+                <!-- The text logo has been replaced with a placeholder image -->
+                <div class="flex md:pl-20 items-center">
+                    <img src="/pictures/Logo (1).png" alt="EastSide Agro Industry Logo" class="h-10">
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-4 text-white">
-                    <a href="#" class="px-2 py-1 text-xs hover:underline hover:">Home</a>
+                    <a href="#" class="px-2 py-1 text-xs hover:underline">Home</a>
                     <a href="#about" class="hover:text-blue-400 transition text-xs">About</a>
                     <div class="relative group">
                         <a href="#products" class="flex items-center hover:text-blue-400 transition text-xs">
                             Products
                         </a>
                     </div>
-                    
                     <a href="#gallery" class="hover:text-blue-400 transition text-xs ">Gallery</a>
                     <a href="#contact" class="hover:text-blue-400 transition text-xs ">Contact us </a>
                 </div>
@@ -45,27 +47,29 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                <div class="flex justify-end p-4">
+                    <button id="close-mobile-menu-btn" class="text-white focus:outline-none p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col items-center justify-center p-12 h-full text-white text-lg space-y-8">
+                    <a href="#" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">About</a>
+                    <a href="#products" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Products</a>
+                    <a href="#gallery" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Gallery</a>
+                    <a href="#contact" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Contact us</a>
+                </div>
+            </div>
         </nav>
 
-        <!-- Mobile Menu (Hidden by default, slides from right) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-30 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-            <div class="flex justify-end p-4">
-                <button id="close-mobile-menu-btn" class="text-white focus:outline-none p-2 rounded-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="flex flex-col items-center justify-center p-12 h-full text-white text-lg space-y-8">
-                <a href="#" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Home</a>
-                <a href="#about" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">About</a>
-                <a href="#products" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Products</a>
-                <a href="#gallery" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Gallery</a>
-                <a href="#contact" class="hover:text-blue-400 transition text-xl py-2 w-full text-center">Contact us</a>
-            </div>
-        </div>
-
-        <div class="relative z-10 hero-content flex items-center justify-start min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-120px)] pb-16">
+        <!-- Hero Content Section -->
+        <!-- Adjusted the height to be full screen -->
+        <div class="relative z-10 flex items-center justify-start h-screen pb-16">
             <div class="container mx-auto px-4 md:pl-12">
                 <div class="text-left text-white max-w-2xl">
                     <h1 class="text-3xl text-center md:text-left sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-wide leading-tight">
@@ -89,7 +93,7 @@
             </div>
         </div>
     </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -123,7 +127,7 @@
         <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
             <!-- Left Side: Text Content -->
             <div class="w-full lg:w-1/2 text-center lg:text-left">
-                <h3 class="text-gray-500 font-semibold mb-2 text-sm">Eastside Agro industry</h3>
+                <h3 class="text-gray-500 font-semibold mb-2 text-sm">Eastside Agro industry plc</h3>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
                     Get to Know Us & <br> Our Story
                 </h2>
@@ -229,56 +233,56 @@ Our production team produces the main brands of coffee for the world which fulfi
         <div class="numbered-circle">01</div>
         <img src="/products/Yirgachefe.webp" alt="Yirgachefe Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Yirgachefe</h4>
-        <p class="text-gray-600 sm:text-xs">Citrus and Floral Flavor, Fine Acidity and Body, 1770 to 2200m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Citrus and Floral Flavor, Fine Acidity and Body, 1770 to 2200m Altitude.</p>
     </div>
     <!-- Bean 2 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">02</div>
         <img src="/products/Jimma.jpg" alt="Jimma Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Jimma</h4>
-        <p class="text-gray-600 sm:text-xs">Hard Balanced Flavor – Fair Light Acidity & Good Heavy Body, 1400 to 1800m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Hard Balanced Flavor – Fair Light Acidity & Good Heavy Body, 1400 to 1800m Altitude.</p>
     </div>
     <!-- Bean 3 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">03</div>
         <img src="/products/Sidama.jpg" alt="Sidama Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Sidama</h4>
-        <p class="text-gray-600 sm:text-xs">Sweet and Spicy Flavor, Balanced Acidity and Body, 1400 to 2200m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Sweet and Spicy Flavor, Balanced Acidity and Body, 1400 to 2200m Altitude.</p>
     </div>
     <!-- Bean 4 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">04</div>
         <img src="/products/Harar.jpg" alt="Harar Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Harar</h4>
-        <p class="text-gray-600 sm:text-xs">Mocha Flavor, Medium to Light Acidity, 1510 to 2120m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Mocha Flavor, Medium to Light Acidity, 1510 to 2120m Altitude.</p>
     </div>
     <!-- Bean 5 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">05</div>
         <img src="/products/Bebeka.png" alt="Bebeka Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Bebeka</h4>
-        <p class="text-gray-600 sm:text-xs">Large, Thick, and Pointed End, Light Acidity & Medium to Good Body, 950 to 1285m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Large, Thick, and Pointed End, Light Acidity & Medium to Good Body, 950 to 1285m Altitude.</p>
     </div>
     <!-- Bean 6 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">06</div>
         <img src="/products/Limmu.webp" alt="Limmu Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Limmu</h4>
-        <p class="text-gray-600 sm:text-xs">Wine Flavor (Well Balanced Cup), Medium Acidity and Body, 1400 to 2100m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Wine Flavor (Well Balanced Cup), Medium Acidity and Body, 1400 to 2100m Altitude.</p>
     </div>
     <!-- Bean 7 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">07</div>
         <img src="/products/Gujji.webp" alt="Gujji Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Gujji</h4>
-        <p class="text-gray-600 sm:text-xs">Sweet and Spicy Flavor, Balanced Acidity & Body, 1400 to 2200m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Sweet and Spicy Flavor, Balanced Acidity & Body, 1400 to 2200m Altitude.</p>
     </div>
     <!-- Bean 8 -->
     <div class="flex flex-col items-center text-center">
         <div class="numbered-circle">08</div>
         <img src="/products/Nekemt.jpg" alt="Nekemt Beans" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mb-3 shadow-md">
         <h4 class="font-bold text-gray-800 text-xs sm:text-xs mb-1">Nekemt</h4>
-        <p class="text-gray-600 sm:text-xs">Fruit Flavor and Medium Body, Medium to Pointed Acidity, 1770 to 2200m Altitude.</p>
+        <p class="text-gray-600 text-xs sm:text-xs">Fruit Flavor and Medium Body, Medium to Pointed Acidity, 1770 to 2200m Altitude.</p>
     </div>
 </div>
 
