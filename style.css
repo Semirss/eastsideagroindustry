@@ -602,7 +602,7 @@
         #contact .container {
             position: relative;
             z-index: 2;
-            max-width: 960px; /* Constrained the content width */
+            max-width: 100%; /* Constrained the content width */
             margin: 0 auto; /* Centered the content */
             padding: 4rem 1rem; /* Adjusted padding for a more compact feel */
         }
