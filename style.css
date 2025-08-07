@@ -24,6 +24,7 @@
             background-repeat: no-repeat;
         }
 
+
         /* Custom image container for the coffee products section */
         .coffee-image-container {
             position: relative;
@@ -260,21 +261,19 @@
             }
         }
 
-        /* Styling for the image hover effect */
         .image-container {
             position: relative;
             overflow: hidden;
-            border-radius: 0.5rem; /* Rounded corners */
-            aspect-ratio: 4/3; /* Maintain aspect ratio for images */
-            cursor: pointer; /* Indicate that images are clickable */
-            /* Add transition for fade-in/out effects */
+            border-radius: 0.5rem; 
+            aspect-ratio: 4/4;
+            cursor: pointer; 
             transition: transform 0.4s ease-out, opacity 0.4s ease-out;
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure images cover the container */
+            object-fit: center; /* Ensure images cover the container */
             transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
         }
 
@@ -361,11 +360,10 @@
 
         .modal-close-button {
             position: absolute;
-            top: 1rem; /* Position from the top */
-            left: 1rem; /* Position from the left */
             background: none;
-            border: none;
-            color: white;
+            
+            border: 1px solid rgba(27, 26, 26, 0.5);
+            color: rgb(0, 0, 0);
             font-size: 2rem;
             cursor: pointer;
             padding: 0.5rem;
@@ -425,4 +423,197 @@
         #contact {
             background: #047031; /* Light gray background */
         
+        }
+
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out;
+            border-radius: 0.5rem;
+        }
+
+        .image-container img {
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-container .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* Transition classes for fade-in/out effect */
+        .fade-in-initial {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .image-container {
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        /* Fullscreen Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for navigation buttons */
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .modal-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .modal-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 2rem;
+            user-select: none;
+            transition: background 0.3s;
+            border-radius: 9999px; /* Rounded buttons */
+            height: 60px; /* fixed height for touch targets */
+            width: 60px; /* fixed width for touch targets */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-nav-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        #prevButton {
+            left: 20px;
+        }
+
+        #nextButton {
+            right: 20px;
+        }
+              #contact {
+            background-color: #1a202c; /* A deep, rich color */
+            position: relative;
+            margin: 2rem; /* Added margin around the section */
+            border-radius: 1rem; /* Added rounded corners to the section */
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://placehold.co/1920x1080/1a202c/FFFFFF?text=Coffee+Beans') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        #contact .container {
+            position: relative;
+            z-index: 2;
+            max-width: 960px; /* Constrained the content width */
+            margin: 0 auto; /* Centered the content */
+            padding: 4rem 1rem; /* Adjusted padding for a more compact feel */
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, #4fd1c5, #38b2ac);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
         }
